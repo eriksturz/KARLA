@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript-Funktion mit AJAX</title>
+    <script src="karte.js"></script>
+    <script src="route.js"></script>
+    <script src="berechnung.js"></script>
+    <script src="dropdown.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd4UQTWiFJJQ7nB0ZirpTm2m2qaBLBTJs&libraries=places&callback=initMap">
+    </script>
+</head>
+<body>
+    <h1>Reise angeben:</h1>
+    <div>  
+        <p>Start: <input type="text" id="start"></p>
+        <p>Ziel: <input type="text" id="ziel"></p>
+        <p>Entfernung:  <input type="text" id="zahl"></p> 
+        <p>Verkehrsmittel wählen: <select id="dropdown"></select></p>
+        <p>Verkehrsmittel wählen: 
+            <select id="verkehrsmittel">
+                <option value="DRIVING">Auto</option>
+                <option value="WALKING">Zu Fuß</option>
+                <optgroup label="Öffentliche Verkehrsmittel">
+                    <option value="TRANSIT_BUS">Bus</option>
+                    <option value="TRANSIT_RAIL">Bahn</option>
+                    <option value="TRANSIT_SUBWAY"></option>
+                    <option value="TRANSIT_TRAIN"></option>
+                    <option value="TRANSIT_TRAM"></option>
+                    <!-- Weitere öffentliche Verkehrsmittel hier hinzufügen -->
+                </optgroup>
+            </select>
+        </p>
+        
+        
+        <input type="button" value="Verarbeiten" onclick="berechneCO2()">
+    </div>  
+    
+    
+    <div style="height: 50px;"></div>
+    <div id="karte" style="height: 400px;"></div>
+
+
+    <!-- Hier wird das Ergebnis angezeigt -->
+    <div id="ergebnis"></div>
+</body>
+</html>

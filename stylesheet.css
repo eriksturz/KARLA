@@ -1,0 +1,40 @@
+#bg-c {
+    background-color: #669966;
+}
+
+
+.fonts {
+    color: #ffffff;
+    font-family: 'Roboto Slab', serif;
+}
+
+ .search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+
+ .search > input {
+    margin: 1%;
+ }
+
+
+ .check {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    margin: 0;
+    
+ }
+
+ .form-check {
+    margin: 30px;
+ }
+   
+ .form-check-label {
+    margin-left: 20px;
+ }
+
+

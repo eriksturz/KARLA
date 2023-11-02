@@ -1,40 +1,27 @@
-#bg-c {
-    background-color: #669966;
+#body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(99, 99, 99);
+   height: 100%;
+   width: 100%;
 }
 
-
-.fonts {
-    color: #ffffff;
-    font-family: 'Roboto Slab', serif;
+#search {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 2%;
+   margin-bottom: 5%;
+   gap: 10px;
 }
 
- .search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
- }
+#routeing{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 5%;
 
- .search > input {
-    margin: 1%;
- }
-
-
- .check {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 90vh;
-    margin: 0;
-    
- }
-
- .form-check {
-    margin: 30px;
- }
-   
- .form-check-label {
-    margin-left: 20px;
- }
-
-
+}

@@ -1,11 +1,10 @@
-#body {
+body {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background-color: rgb(99, 99, 99);
-   height: 100%;
-   width: 100%;
+   background-color: #669966;
+   
 }
 
 #search {
@@ -18,10 +17,31 @@
    gap: 10px;
 }
 
-#routeing{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 5%;
 
+#logo {
+   height: 12rem;
+   width: 28rem;
+   border-radius: 50px;
+}
+
+h1 {
+   font-family: "Roboto", sans-serif;
+   color: white;
+}
+
+p {
+   font-family: "Roboto", sans-serif;
+}
+
+.custom-font {
+   font-family: "Roboto", sans-serif;
+}
+
+li {
+   padding: 20px;
+}
+
+.lead {
+   font-family: serif;
+   font-size: 1.2em;
 }

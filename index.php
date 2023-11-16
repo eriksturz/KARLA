@@ -15,8 +15,8 @@
 <body>
     <div id="body">
         <div class="container" id="search">
-            <input type="text" name="Start" id="Start">
-            <input type="text" name="Goal" id="Goal">
+            <input type="text" name="Start" id="Start" placeholder="Start">
+            <input type="text" name="Goal" id="Goal" placeholder="Goal">
             <label for="vehicle">How would you like to travel?</label>
             <select name="vehicle" id="vehicle">
                 <option value="DRIVING">Car</option>

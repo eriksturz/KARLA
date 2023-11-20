@@ -6,8 +6,8 @@
     <title>KARLA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheet.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=<?php require 'api_key.php';
+    <link rel="stylesheet" href="../stylesheet.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php require '../api_key.php';
     echo $api_key; ?>&libraries=places,routes">
     </script>
 </head>
@@ -26,14 +26,14 @@
                 </div>
             </div>
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="./pictures/karla.png" alt="Brandlogo" id="logo">
+                <img src="../pictures/karla.png" alt="Brandlogo" id="logo">
             </div>
         </div>
     </div>
 
     <div class="d-flex flex-wrap justify-content-center py-3 mb-4 mt-5">
         <ul class="nav nav-underline nav-justified">
-            <li class="nav-item"><a href="http://localhost/KARLA/car.php" class="nav-link link-light active"
+            <li class="nav-item"><a href="http://localhost/KARLA/car/car.php" class="nav-link link-light active"
                     aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" height="2em"
                         viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <style>
@@ -44,7 +44,7 @@
                         <path
                             d="M171.3 96H224v96H111.3l30.4-75.9C146.5 104 158.2 96 171.3 96zM272 192V96h81.2c9.7 0 18.9 4.4 25 12l67.2 84H272zm256.2 1L428.2 68c-18.2-22.8-45.8-36-75-36H171.3c-39.3 0-74.6 23.9-89.1 60.3L40.6 196.4C16.8 205.8 0 228.9 0 256V368c0 17.7 14.3 32 32 32H65.3c7.6 45.4 47.1 80 94.7 80s87.1-34.6 94.7-80H385.3c7.6 45.4 47.1 80 94.7 80s87.1-34.6 94.7-80H608c17.7 0 32-14.3 32-32V320c0-65.2-48.8-119-111.8-127zM434.7 368a48 48 0 1 1 90.5 32 48 48 0 1 1 -90.5-32zM160 336a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
                     </svg></a></li>
-            <li class="nav-item"><a href="http://localhost/KARLA/plane.php" class="nav-link link-light"><svg
+            <li class="nav-item"><a href="http://localhost/KARLA/plane/plane.php" class="nav-link link-light"><svg
                         xmlns="http://www.w3.org/2000/svg" height="2em"
                         viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <style>
@@ -55,7 +55,7 @@
                         <path
                             d="M482.3 192c34.2 0 93.7 29 93.7 64c0 36-59.5 64-93.7 64l-116.6 0L265.2 495.9c-5.7 10-16.3 16.1-27.8 16.1l-56.2 0c-10.6 0-18.3-10.2-15.4-20.4l49-171.6L112 320 68.8 377.6c-3 4-7.8 6.4-12.8 6.4l-42 0c-7.8 0-14-6.3-14-14c0-1.3 .2-2.6 .5-3.9L32 256 .5 145.9c-.4-1.3-.5-2.6-.5-3.9c0-7.8 6.3-14 14-14l42 0c5 0 9.8 2.4 12.8 6.4L112 192l102.9 0-49-171.6C162.9 10.2 170.6 0 181.2 0l56.2 0c11.5 0 22.1 6.2 27.8 16.1L365.7 192l116.6 0z" />
                     </svg></a></li>
-            <li class="nav-item"><a href="http://localhost/KARLA/bike.php" class="nav-link link-light"><svg
+            <li class="nav-item"><a href="http://localhost/KARLA/bike/bike.php" class="nav-link link-light"><svg
                         xmlns="http://www.w3.org/2000/svg" height="2em"
                         viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <style>
@@ -66,7 +66,7 @@
                         <path
                             d="M400 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm27.2 64l-61.8-48.8c-17.3-13.6-41.7-13.8-59.1-.3l-83.1 64.2c-30.7 23.8-28.5 70.8 4.3 91.6L288 305.1V416c0 17.7 14.3 32 32 32s32-14.3 32-32V288c0-10.7-5.3-20.7-14.2-26.6L295 232.9l60.3-48.5L396 217c5.7 4.5 12.7 7 20 7h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H427.2zM56 384a72 72 0 1 1 144 0A72 72 0 1 1 56 384zm200 0A128 128 0 1 0 0 384a128 128 0 1 0 256 0zm184 0a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zm200 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" />
                     </svg></a></li>
-            <li class="nav-item"><a href="http://localhost/KARLA/public_transport.php" class="nav-link link-light"><svg
+            <li class="nav-item"><a href="http://localhost/KARLA/public_transport/public_transport.php" class="nav-link link-light"><svg
                         xmlns="http://www.w3.org/2000/svg" height="2em"
                         viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <style>
@@ -77,7 +77,7 @@
                         <path
                             d="M96 0C43 0 0 43 0 96V352c0 48 35.2 87.7 81.1 94.9l-46 46C28.1 499.9 33.1 512 43 512H82.7c8.5 0 16.6-3.4 22.6-9.4L160 448H288l54.6 54.6c6 6 14.1 9.4 22.6 9.4H405c10 0 15-12.1 7.9-19.1l-46-46c46-7.1 81.1-46.9 81.1-94.9V96c0-53-43-96-96-96H96zM64 128c0-17.7 14.3-32 32-32h80c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM272 96h80c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H272c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32zM64 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm288-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
                     </svg></a></li>
-            <li class="nav-item"><a href="http://localhost/KARLA/video_call.php" class="nav-link link-light"><svg
+            <li class="nav-item"><a href="http://localhost/KARLA/video_call/video_call.php" class="nav-link link-light"><svg
                         xmlns="http://www.w3.org/2000/svg" height="2em"
                         viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <style>
@@ -104,7 +104,7 @@
         <button class="btn btn-outline-light btn-lg px-4 custom-font" id="calculateRouteButton">CO²-Ausstoß
             berechnen</button>
     </div>
-<script src="route_by_car.js"></script>
+<script type="module" src="../car/route_by_car.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+
 var startInput = document.getElementById("Start");
 var goalInput = document.getElementById("Goal");
 var xhr = new XMLHttpRequest();
@@ -8,7 +9,9 @@ var autocompleteGoal = new google.maps.places.Autocomplete(goalInput);
 var startAddress; // Variable zum Speichern der Startadresse
 var goalAddress; // Variable zum Speichern der Zieladresse
 
-// Funktion, um Eingabe in eine Adresse umzuwandeln
+
+
+//Funktion, um Eingabe in eine Adresse umzuwandeln
 function convertInputToAddress(inputField, autocomplete) {
   var place = autocomplete.getPlace();
   if (place.formatted_address) {
@@ -26,12 +29,12 @@ function convertInputToAddress(inputField, autocomplete) {
 // Event-Handler für Startadresse
 autocompleteStart.addListener("place_changed", function () {
   convertInputToAddress(startInput, autocompleteStart);
-});
+}); 
 
 // Event-Handler für Zieladresse
 autocompleteGoal.addListener("place_changed", function () {
   convertInputToAddress(goalInput, autocompleteGoal);
-});
+}); 
 
 function calculateRoute() {
   var startAddress = startInput.value;

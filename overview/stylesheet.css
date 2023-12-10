@@ -15,10 +15,6 @@ header {
   width: 90%;
 }
 
-label {
-  font-family: "Roboto", sans-serif;
-  }
-
 .hidden {
   display: none;
 }
@@ -32,6 +28,12 @@ label {
   margin-bottom: 5%;
   margin-top: 5%;
   gap: 10px;
+}
+
+#overview{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #search {

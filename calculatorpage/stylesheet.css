@@ -18,7 +18,7 @@ header {
 label {
   font-family: "Roboto", sans-serif;
   }
-
+  
 .hidden {
   display: none;
 }
@@ -32,7 +32,10 @@ label {
   margin-bottom: 5%;
   margin-top: 5%;
   gap: 10px;
+  width: 90%;
 }
+
+
 
 #search {
   display: flex;
@@ -40,6 +43,7 @@ label {
   justify-content: center;
   align-items: center;
   margin-top: 5%;
+ 
 }
 
 #myform {
@@ -71,6 +75,7 @@ label {
   justify-content: center;
   align-items: center;
   margin: 5%;
+  
 }
 
 #logo {
@@ -99,11 +104,13 @@ h2 {
 
 p {
   font-family: "Roboto", sans-serif;
+  
 }
 
 .custom-font {
   font-family: "Roboto", sans-serif;
   text-align: center;
+
 }
 
 li {

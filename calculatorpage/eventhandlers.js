@@ -39,7 +39,19 @@ autocompleteStart.addListener("place_changed", function () {
   var place = autocompleteStart.getPlace();
   Startaddress.lat = place.geometry.location.lat();
   Startaddress.lng = place.geometry.location.lng();
-  Startaddress.formatted_address = place.formatted_address;
+  let city, postal_code, country;
+  for (let i = 0; i < place.address_components.length; i++) {
+    let component = place.address_components[i];
+    if (component.types.includes("locality")) {
+      city = component.long_name;
+    } else if (component.types.includes("postal_code")) {
+      postal_code = component.long_name;
+    } else if (component.types.includes("country")) {
+      country = component.long_name;
+    }
+  }
+  
+  Startaddress.formatted_address = postal_code ? `${postal_code}, ${city}, ${country}` : `${city}, ${country}`;
 });
 
 // Event-Handler für Goaladresse
@@ -47,11 +59,22 @@ autocompleteGoal.addListener("place_changed", function () {
   var place = autocompleteGoal.getPlace();
   Goaladdress.lat = place.geometry.location.lat();
   Goaladdress.lng = place.geometry.location.lng();
-  Goaladdress.formatted_address = place.formatted_address;
+  let city, postal_code, country;
+  for (let i = 0; i < place.address_components.length; i++) {
+    let component = place.address_components[i];
+    if (component.types.includes("locality")) {
+      city = component.long_name;
+    } else if (component.types.includes("postal_code")) {
+      postal_code = component.long_name;
+    } else if (component.types.includes("country")) {
+      country = component.long_name;
+    }
+  }
+
+  Goaladdress.formatted_address = postal_code ? `${postal_code}, ${city}, ${country}` : `${city}, ${country}`;
 });
 
-
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener("DOMContentLoaded", (event) => {
   showstepsOnLoad();
 });
 
@@ -127,9 +150,7 @@ document
             travelers,
             returnT
           );
-
-        case "VIDEOCALL":
-          await sendValuesToPHP(time);
+          break;
       }
       event.target.submit();
       showsteps(Startaddress, Goaladdress);

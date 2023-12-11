@@ -15,21 +15,40 @@
   </head>
 
   <body>
-    <header class=" py-3 mb-5" style="width: 90%;" >
-      <img src="../pictures/Karla.PNG" alt="Brandlogo" id="logo">
-    <ul class="nav nav-underline">
-      <li class="nav-item"><a href="http://localhost/KARLA/create_trip_user.html" class="nav-link active" aria-current="page"><p>Home</p></a></li>
-      <li class="nav-item"><a href="https://www.reallabor-karla.de/kontakt.php" target="_blank" class="nav-link"><p>Kontakt</p></a></li>
-      <li class="nav-item"><a href="https://www.reallabor-karla.de/klimaschonend-reisen.php" target="_blank" class="nav-link"><p>Projekt</p></a></li>
-    </ul>
-  </header>
+    <header class="py-3 mb-5" style="width: 90%">
+      <img src="../pictures/Karla.PNG" alt="Brandlogo" id="logo" />
+      <ul class="nav nav-underline">
+        <li class="nav-item">
+          <a
+            href="http://localhost/KARLA/create_trip_user.html"
+            class="nav-link active"
+            aria-current="page"
+            ><p>Home</p></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://www.reallabor-karla.de/kontakt.php"
+            target="_blank"
+            class="nav-link"
+            ><p>Kontakt</p></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://www.reallabor-karla.de/klimaschonend-reisen.php"
+            target="_blank"
+            class="nav-link"
+            ><p>Projekt</p></a
+          >
+        </li>
+      </ul>
+    </header>
 
-
-<h1>CO²-Rechner für Dienstreisen</h1>
+    <h1>CO²-Rechner für Dienstreisen</h1>
 
     <div id="search">
-    <form id="myform">
-      
+      <form id="myform">
         <div id="vehiclediv">
           <label for="vehicle">Wie Reisen Sie?</label>
           <select name="vehicle" id="vehicle" class="form-select">
@@ -41,13 +60,12 @@
             <option value="PLANEIN">Flug (National)</option>
             <option value="PLANEOUT">Flug (International)</option>
             <option value="BICYCLING">E-Bike</option>
-            <option value="VIDEOCALL">Videokonferenz</option>
           </select>
         </div>
 
         <div id="startdiv">
           <label for="Start">Start:</label>
-          <input type="text" id="Start" class="form-control" placeholder=""/>
+          <input type="text" id="Start" class="form-control" placeholder="" />
         </div>
 
         <div id="goaldiv">
@@ -57,7 +75,12 @@
 
         <div id="returnTripdiv">
           <label for="returnTrip">Rückweg berechnen?</label>
-          <input type="checkbox" id="returnTrip" name="returnTrip"  class="form-check-input" />
+          <input
+            type="checkbox"
+            id="returnTrip"
+            name="returnTrip"
+            class="form-check-input"
+          />
         </div>
 
         <div id="personsdiv">
@@ -70,30 +93,35 @@
             min="1"
             max="5"
             step="1"
-            class="form-control" />
+            class="form-control"
+          />
         </div>
 
         <div id="timediv">
-          <label for="time">Wie lange dauert ihre Konferenz voraussichtlich?</label>
+          <label for="time"
+            >Wie lange dauert ihre Konferenz voraussichtlich?</label
+          >
           <input type="number" id="time" name="time" class="form-control" />
         </div>
         <div id="buttondiv">
           <button
             type="submit"
             class="btn btn-outline-light btn-lg px-5 custom-font"
-            id="addStepButton">
+            id="addStepButton"
+          >
             Routenabschnitt hinzufügen
           </button>
-
-          <button
-            class="btn btn-outline-light btn-lg px-5 custom-font"
-            id="calculateRouteButton">
-            CO²-Ausstoß berechnen
-          </button>
         </div>
+        <button
+          type="button"
+          class="btn btn-outline-light btn-lg px-5 custom-font"
+          id="calculateRouteButton"
+        >
+          CO²-Ausstoß berechnen
+        </button>
       </form>
-    <div id="steps"></div>
-  </div>
+      <div id="steps"></div>
+    </div>
 
     <script type="module" src="../globals.js"></script>
     <script defer type="module" src="./dynamic_form.js"></script>

@@ -15,64 +15,18 @@ header {
   width: 90%;
 }
 
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  gap: 10px;
-}
-
 #overview{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90%;
 }
 
-#search {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
-}
-
-#myform {
+.tabels{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2%;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  gap: 10px;
-  margin: 5%;
-}
-
-#vehiclediv {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  gap: 10px;
-}
-
-#steps {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5%;
 }
 
 #logo {
@@ -95,24 +49,32 @@ h1 {
 }
 
 h2 {
-  font-family: "Roboto", sans-serif;
-  color: white;
+  font-family: "Roboto", serif;
+  font-weight: bold;
 }
 
 p {
   font-family: "Roboto", sans-serif;
 }
 
-.custom-font {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
+
+
+/* Stil für die gesamte Tabelle */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Entfernt doppelte Ränder */
+  font-family: 'Roboto', sans-serif;
 }
 
-li {
-  padding: 20px;
+/* Stil für Tabellenzellen */
+td, th {
+  border: 1px solid white;
+  text-align: left;
+  padding: 8px;
 }
 
-.lead {
-  font-family: serif;
-  font-size: 1.2em;
+/* Stil für Tabellenüberschriften */
+th {
+  background-color: rgba(211, 211, 211, 0.822);
 }
+

@@ -34,7 +34,7 @@ export function routing_by_rail(
             var step = steps[i];
 
             if (step.travel_mode == "TRANSIT") {
-              totalTransitDistance += parseFloat(step.distance.value);
+              totalTransitDistance += parseFloat(step.distance.value) / 1000;
 
               console.log("Schritt " + (i + 1));
               console.log("Distanz:", step.distance.text);
@@ -54,7 +54,7 @@ export function routing_by_rail(
             Zieladresse: Goaladdress.formatted_address,
             Mitfahrer: travelers,
             Fahrzeug: selectedVehicle,
-            Gesammtdistanz: totalTransitDistance / 1000,
+            Gesammtdistanz: totalTransitDistance,
           }, 'send_data_to_database.php');
 
           // Lösen Sie das Promise auf, wenn der Callback aufgerufen wird

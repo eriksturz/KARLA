@@ -1,6 +1,6 @@
 import { sendValuesToPHP } from "./send_to_php.js";
 
-export function routing_by_rail(
+export function getRaildistance(
   directionsService,
   Startaddress,
   Goaladdress,

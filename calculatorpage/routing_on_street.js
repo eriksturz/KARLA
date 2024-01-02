@@ -1,6 +1,6 @@
 import { sendValuesToPHP } from "./send_to_php.js";
 
-export function routing_on_street(
+export function getStreetdistance(
   serviceMatrix,
   Startaddress,
   Goaladdress,

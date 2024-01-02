@@ -1,7 +1,7 @@
 <?php
 
 include("db_con\dbconnect.php");
-include ("create_trip_id.php");
+include ("getID_setUserTrip.php");
 
 // Lesen Sie die JSON-Daten aus dem php://input-Stream
 $json = file_get_contents('php://input');
@@ -17,6 +17,6 @@ if (!isset($data["lastname"], $data["employeeID"])) {
     die("Ein oder mehrere erforderliche POST-Variablen fehlen.");
 }
 
-generateNewTripID($mysqli, $lastname, $employeeID);
+createUserandTrip($mysqli, $lastname, $employeeID);
 
 ?>

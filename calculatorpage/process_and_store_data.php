@@ -1,8 +1,8 @@
 <?php
 include("../db_con/dbconnect.php");
-include("calculate_co2.php");
-include("send_to_section.php");
-include("update_trip.php");
+include("calculate_Vehicle_Emissions.php");
+include("set_Sectiondata.php");
+include("set_Tripdata.php");
 
 // Lesen Sie die JSON-Daten aus dem php://input-Stream
 $json = file_get_contents('php://input');
@@ -13,6 +13,7 @@ $data = json_decode($json, true);
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
 $userID = $_SESSION['userID'];
 $tripID = $_SESSION['tripID'];
 
@@ -30,8 +31,8 @@ if (!isset($data["Startadresse"], $data["Zieladresse"], $data["Gesammtdistanz"],
 }
 
 
-list($co2_emmisions, $vehicleID) = calculateCo2($mysqli, $formattedDistance, $formattedPersons, $selectedVehicle);
-sendSectiondata($mysqli, $Startaddress, $Goaladdress, $formattedDistance, $co2_emmisions, $vehicleID, $tripID, $userID);
-updateTrip($mysqli, $tripID, $userID);
+list($co2_emmisions, $vehicleID) = calculateVehicleEmissions($mysqli, $formattedDistance, $formattedPersons, $selectedVehicle);
+setSectiondata($mysqli, $Startaddress, $Goaladdress, $formattedDistance, $co2_emmisions, $vehicleID, $tripID, $userID);
+setTripData($mysqli, $tripID, $userID);
 
 ?>

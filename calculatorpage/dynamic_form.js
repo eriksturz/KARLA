@@ -15,7 +15,6 @@ window.addEventListener("load", function () {
   setVisibility("goaldiv", false);
   setVisibility("returnTripdiv", false);
   setVisibility("personsdiv", false);
-  setVisibility("timediv", false);
   setVisibility("buttondiv", false);
 
   document.getElementById("vehicle").onchange = function () {
@@ -23,20 +22,11 @@ window.addEventListener("load", function () {
     console.log(vehicle);
     // Abhängig von der ausgewählten Option werden die Inputs ein- oder ausgeblendet
     switch (vehicle) {
-      case "VIDEOCALL":
-        setVisibility("startdiv", false);
-        setVisibility("goaldiv", false);
-        setVisibility("returnTripdiv", false);
-        setVisibility("personsdiv", false);
-        setVisibility("timediv", true);
-        setVisibility("buttondiv", true);
-        break;
       case "DRIVING":
         setVisibility("startdiv", true);
         setVisibility("goaldiv", true);
         setVisibility("returnTripdiv", true);
         setVisibility("personsdiv", true);
-        setVisibility("timediv", false);
         setVisibility("buttondiv", true);
         break;
       case "placeholder":
@@ -44,7 +34,6 @@ window.addEventListener("load", function () {
         setVisibility("goaldiv", false);
         setVisibility("returnTripdiv", false);
         setVisibility("personsdiv", false);
-        setVisibility("timediv", false);
         setVisibility("buttondiv", false);
         break;
       default:
@@ -52,7 +41,6 @@ window.addEventListener("load", function () {
         setVisibility("goaldiv", true);
         setVisibility("returnTripdiv", true);
         setVisibility("personsdiv", false);
-        setVisibility("timediv", false);
         setVisibility("buttondiv", true);
     }
   };

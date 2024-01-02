@@ -1,6 +1,6 @@
 <?php
 include ("db_con\dbconnect.php");
-function calculateCo2($mysqli, $formattedDistance, $formattedPersons, $selectedVehicle){   
+function calculateVehicleEmissions($mysqli, $formattedDistance, $formattedPersons, $selectedVehicle){   
     $stmt = $mysqli->prepare("SELECT co2_output, vehicleID FROM vehicle WHERE vehicle_type = ?");
     $stmt->bind_param("s", $selectedVehicle);
     if (!$stmt->execute()) {
@@ -18,7 +18,7 @@ function calculateCo2($mysqli, $formattedDistance, $formattedPersons, $selectedV
         $formattedPersons = 1;
     }
     if ($selectedVehicle == "DRIVING") {
-        $co2_emmisions = $co2_output * $formattedDistance / $formattedPersons;
+        $co2_emmisions = ($co2_output / $formattedPersons) * $formattedDistance;
     } else {
         $co2_emmisions = $co2_output * $formattedDistance;
     }

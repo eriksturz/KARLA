@@ -1,3 +1,4 @@
+
 export async function sendValuesToPHP(params, url) {
   try {
     // Senden Sie die Daten mit einer POST-Anfrage

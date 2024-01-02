@@ -12,6 +12,3 @@ export let Startaddress = {};
 export let Goaladdress = {};
 export var button1 = document.getElementById("calculateRouteButton");
 export var button3 = document.getElementById("addStepButton");
-export var time = document.getElementById("time");
-export var addStepButton = document.getElementById("addStep");
-export var employeeID = document.getElementById("employeeID");

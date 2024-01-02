@@ -9,13 +9,9 @@ import {
   serviceMatrix,
   directionsService,
   button1,
-  time,
 } from "../globals.js";
-import { routing_on_street } from "./routing_on_street.js";
-import { calculateAirDistance } from "./routing_by_plane.js";
+import { getStreetDistance, getRailDistance, getPlaneDistance } from "./get_distances.js";
 import { areInputsValid } from "./validate_input.js";
-import { routing_by_rail } from "./routing_public_transport.js";
-import { sendValuesToPHP } from "./send_to_php.js";
 import { showsteps } from "./show_steps.js";
 import { showstepsOnLoad } from "./show_steps.js";
 
@@ -74,7 +70,7 @@ autocompleteGoal.addListener("place_changed", function () {
   Goaladdress.formatted_address = postal_code ? `${postal_code}, ${city}, ${country}` : `${city}, ${country}`;
 });
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   showstepsOnLoad();
 });
 
@@ -102,17 +98,8 @@ document
       console.log(Goaladdress);
       switch (selectedVehicle) {
         case "DRIVING":
-          await routing_on_street(
-            serviceMatrix,
-            Startaddress,
-            Goaladdress,
-            selectedVehicle,
-            travelers,
-            returnT
-          );
-          break;
         case "BICYCLING":
-          await routing_on_street(
+          await getStreetDistance(
             serviceMatrix,
             Startaddress,
             Goaladdress,
@@ -123,16 +110,8 @@ document
           break;
 
         case "PLANEIN":
-          await calculateAirDistance(
-            selectedVehicle,
-            Startaddress,
-            Goaladdress,
-            travelers,
-            returnT
-          );
-          break;
         case "PLANEOUT":
-          await calculateAirDistance(
+          await getPlaneDistance(
             selectedVehicle,
             Startaddress,
             Goaladdress,
@@ -140,9 +119,9 @@ document
             returnT
           );
           break;
-
+      
         case "TRANSIT":
-          await routing_by_rail(
+          await getRailDistance(
             directionsService,
             Startaddress,
             Goaladdress,
@@ -156,7 +135,7 @@ document
       showsteps(Startaddress, Goaladdress);
     } else {
       // Display an error message or perform some other action
-      alert("Bitte füllen Sie alle Felder aus.");
+      alert("Bitte nutzen Sie die Adressvorschläge.");
     }
   });
 

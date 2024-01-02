@@ -1,6 +1,6 @@
 <?php
-session_start();
-function updateTrip($mysqli, $tripID, $userID) {
+function setTripData($mysqli, $tripID, $userID)
+{
     $stmt = $mysqli->prepare("SELECT SUM(sectionemissions), SUM(sectiondistance) FROM section WHERE tripID = ? AND userID = ?");
     $stmt->bind_param("ii", $tripID, $userID);
     if (!$stmt->execute()) {
@@ -20,9 +20,7 @@ function updateTrip($mysqli, $tripID, $userID) {
     $rowStart = $resultStart->fetch_assoc();
     $stmt->close();
 
-
     // Get the last goal address
-
     $stmt = $mysqli->prepare("SELECT sectiongoal FROM section WHERE tripID = ? AND userID = ? ORDER BY sectionID DESC LIMIT 1");
     $stmt->bind_param("ii", $tripID, $userID);
     if (!$stmt->execute()) {
@@ -39,5 +37,4 @@ function updateTrip($mysqli, $tripID, $userID) {
     }
     $stmt->close();
 }
-
 ?>

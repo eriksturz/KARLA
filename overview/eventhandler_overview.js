@@ -1,6 +1,6 @@
 import { getTripData, getSectionData } from "./get_data_from_database.js";
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   getTripData("get_data_from_trip.php", {
     distance: "distance_value",
     co2_emission: "co2_emission_value",

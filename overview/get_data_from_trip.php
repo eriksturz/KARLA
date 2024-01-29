@@ -33,4 +33,3 @@ $data = getDatafromTrip($mysqli, $_SESSION['tripID'], $_SESSION['userID']);
 echo json_encode($data);
 // $_SESSION['tripID'], $_SESSION['userID']
 ?>
-

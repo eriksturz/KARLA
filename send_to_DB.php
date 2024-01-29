@@ -1,22 +1,17 @@
 <?php
-
 include("db_con\dbconnect.php");
-include ("getID_setUserTrip.php");
+include("getID_setUserTrip.php");
 
-// Lesen Sie die JSON-Daten aus dem php://input-Stream
 $json = file_get_contents('php://input');
-
-// Wandeln Sie die JSON-Daten in ein PHP-Array um
 $data = json_decode($json, true);
 
-
 $lastname = mysqli_real_escape_string($mysqli, $data["lastname"]);
-$employeeID = (int)$data["employeeID"];
+$employeeID = (int) $data["employeeID"];
+$travelers = (int) $data["travelers"];
 
-if (!isset($data["lastname"], $data["employeeID"])) {
+if (!isset($data["lastname"], $data["employeeID"], $data["travelers"])) {
     die("Ein oder mehrere erforderliche POST-Variablen fehlen.");
 }
 
-createUserandTrip($mysqli, $lastname, $employeeID);
-
+createUserandTrip($mysqli, $lastname, $employeeID, $travelers);
 ?>

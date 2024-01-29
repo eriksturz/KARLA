@@ -32,18 +32,42 @@ function insertTrip($mysqli, $tripID, $userID) {
     $stmt->close();
 }
 
-function createUserandTrip($mysqli, $lastname, $employeeID)
-{
-    // Create a new userID
-    $userID = getMaxId($mysqli, 'user', 'userID');
-    insertUser($mysqli, $userID, $lastname, $employeeID);
+function getUserIdIfExists($mysqli, $lastname, $employeeID) {
+    $stmt = $mysqli->prepare("SELECT userID FROM user WHERE last_name = ? AND employeeID = ?");
+    $stmt->bind_param("si", $lastname, $employeeID);
+    if (!$stmt->execute()) {
+        die("Error executing query: " . $stmt->error);
+    }
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $stmt->close();
+    if ($row) {
+        return $row['userID'];
+    } else {
+        return NULL;
+    }
+}
 
-    // Create a new tripID
-    $tripID = getMaxId($mysqli, 'trip', 'tripID');
-    insertTrip($mysqli, $tripID, $userID);
+
+function createUserandTrip($mysqli, $lastname, $employeeID, $travelers)
+{
+    $userID = getUserIdIfExists($mysqli, $lastname, $employeeID);
+    if ($userID === NULL) {
+        // Create a new userID
+        $userID = getMaxId($mysqli, 'user', 'userID');
+        insertUser($mysqli, $userID, $lastname, $employeeID);
+
+        // Create a new tripID
+        $tripID = getMaxId($mysqli, 'trip', 'tripID');
+        insertTrip($mysqli, $tripID, $userID);
+    } else {
+        // Create a new tripID for the existing userID
+        $tripID = getMaxId($mysqli, 'trip', 'tripID');
+        insertTrip($mysqli, $tripID, $userID);
+    }
 
     $_SESSION['tripID'] = $tripID;
     $_SESSION['userID'] = $userID;
+    $_SESSION['travelers'] = $travelers;
 }
-
 ?>

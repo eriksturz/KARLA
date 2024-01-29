@@ -1,12 +1,9 @@
-export function areInputsValid(selectedVehicle, Startaddress, Goaladdress, returnT, travelers) {
-  // Check if the fields are filled out
+export function areInputsValid(selectedVehicle, Startaddress, Goaladdress) {
   if (
     selectedVehicle &&
     (Startaddress.formatted_address ||
       (Startaddress.lat && Startaddress.lng)) &&
-    (Goaladdress.formatted_address || (Goaladdress.lat && Goaladdress.lng)) &&
-    (returnT === true || returnT === false) &&
-    travelers
+    (Goaladdress.formatted_address || (Goaladdress.lat && Goaladdress.lng))
   ) {
     return true;
   } else {

@@ -19,31 +19,13 @@ label {
   font-family: "Roboto", sans-serif;
   }
   
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  gap: 10px;
-  width: 90%;
-}
-
-
 
 #search {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin-top: 5%;
- 
+  align-items: start;
+  height: 90vh;
 }
 
 #myform {
@@ -53,7 +35,7 @@ label {
   align-items: center;
   padding: 2%;
   margin-bottom: 5%;
-  margin-top: 5%;
+  margin-top: 10%;
   gap: 10px;
   margin: 5%;
 }
@@ -64,7 +46,29 @@ label {
   justify-content: center;
   align-items: center;
   padding: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+  margin-top: 5%;
+  gap: 10px;
+}
+
+#startdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  margin-bottom: 3%;
+  margin-top: 5%;
+  gap: 10px;
+}
+
+#goaldiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  margin-bottom: 20%;
   margin-top: 5%;
   gap: 10px;
 }
@@ -75,7 +79,17 @@ label {
   justify-content: center;
   align-items: center;
   margin: 5%;
+  padding: 2%;
   
+}
+
+#buttondiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  gap: 10px;
 }
 
 #logo {
@@ -95,6 +109,7 @@ label {
 h1 {
   font-family: "Roboto", serif;
   font-weight: bold;
+  margin-bottom: 5%;
 }
 
 h2 {

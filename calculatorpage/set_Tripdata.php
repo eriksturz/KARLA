@@ -1,4 +1,5 @@
 <?php
+include("..\db_con\dbconnect.php");
 function setTripData($mysqli, $tripID, $userID)
 {
     $stmt = $mysqli->prepare("SELECT SUM(sectionemissions), SUM(sectiondistance) FROM section WHERE tripID = ? AND userID = ?");

@@ -58,22 +58,20 @@ p {
 }
 
 
-
-/* Stil für die gesamte Tabelle */
 table {
   width: 100%;
-  border-collapse: collapse; /* Entfernt doppelte Ränder */
+  border-collapse: collapse; 
   font-family: 'Roboto', sans-serif;
 }
 
-/* Stil für Tabellenzellen */
+
 td, th {
   border: 1px solid white;
   text-align: left;
   padding: 8px;
 }
 
-/* Stil für Tabellenüberschriften */
+
 th {
   background-color: rgba(211, 211, 211, 0.822);
 }

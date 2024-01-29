@@ -2,8 +2,6 @@ import {
   Startaddress,
   Goaladdress,
   vehicle,
-  persons,
-  returnTrip,
   autocompleteGoal,
   autocompleteStart,
   serviceMatrix,
@@ -17,8 +15,6 @@ import { showstepsOnLoad } from "./show_steps.js";
 
 vehicle.addEventListener("change", function () {
   var selectedVehicle = vehicle.value;
-  console.log(selectedVehicle);
-  // Setzen Sie die types Option basierend auf dem gewählten Fahrzeug
   switch (selectedVehicle) {
     case "PLANEIN":
     case "PLANEOUT":
@@ -50,7 +46,7 @@ autocompleteStart.addListener("place_changed", function () {
   Startaddress.formatted_address = postal_code ? `${postal_code}, ${city}, ${country}` : `${city}, ${country}`;
 });
 
-// Event-Handler für Goaladresse
+
 autocompleteGoal.addListener("place_changed", function () {
   var place = autocompleteGoal.getPlace();
   Goaladdress.lat = place.geometry.location.lat();
@@ -74,28 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
   showstepsOnLoad();
 });
 
-// Add event listener to the button
+
 document
   .getElementById("myform")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
-    console.log("Button clicked");
-    // Get the input fields
-    var selectedVehicle = vehicle.value; //Select-Element mit 5 Optionen
-    var returnT = returnTrip.checked; //Checkbox-Element
-    var travelers = parseFloat(persons.value); //Input-Element
-    // Check if the fields are filled out
+    var selectedVehicle = vehicle.value; 
     if (
       areInputsValid(
         selectedVehicle,
         Startaddress,
         Goaladdress,
-        returnT,
-        travelers
       )
     ) {
-      console.log(Startaddress);
-      console.log(Goaladdress);
       switch (selectedVehicle) {
         case "DRIVING":
         case "BICYCLING":
@@ -104,8 +91,6 @@ document
             Startaddress,
             Goaladdress,
             selectedVehicle,
-            travelers,
-            returnT
           );
           break;
 
@@ -115,8 +100,6 @@ document
             selectedVehicle,
             Startaddress,
             Goaladdress,
-            travelers,
-            returnT
           );
           break;
       
@@ -126,19 +109,21 @@ document
             Startaddress,
             Goaladdress,
             selectedVehicle,
-            travelers,
-            returnT
           );
           break;
       }
       event.target.submit();
       showsteps(Startaddress, Goaladdress);
     } else {
-      // Display an error message or perform some other action
       alert("Bitte nutzen Sie die Adressvorschläge.");
     }
   });
 
-button1.addEventListener("click", async function () {
-  window.location.href = "http://localhost/KARLA/overview/overview.html";
+button1.addEventListener("click", async function (event) {
+  var userConfirmed = confirm("Sind alle Reiseabschnitte hinzugefügt?");
+  if (userConfirmed) {
+    window.location.href = "http://localhost/KARLA/overview/overview.html";
+  } else {
+    event.preventDefault();
+  }
 });

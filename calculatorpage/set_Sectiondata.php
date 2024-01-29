@@ -1,5 +1,5 @@
 <?php
-include("db_con\dbconnect.php");
+include("..\db_con\dbconnect.php");
 
 function setSectiondata($mysqli, $Startaddress, $Goaladdress, $formattedDistance, $co2_emmisions, $vehicleID, $tripID, $userID)
 {

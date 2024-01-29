@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./stylesheet.css" />
-    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd4UQTWiFJJQ7nB0ZirpTm2m2qaBLBTJs&libraries=places"></script>
   </head>
 
   <body>
@@ -52,10 +52,7 @@
         <div id="vehiclediv">
           <label for="vehicle">Wie Reisen Sie?</label>
           <select name="vehicle" id="vehicle" class="form-select">
-            <option value="placeholder" selected>
-              Bitte Transportmittel wählen.
-            </option>
-            <option value="DRIVING">Auto</option>
+            <option value="DRIVING" selected>Auto</option>
             <option value="TRANSIT">Öffentliche Verkehrsmittel</option>
             <option value="PLANEIN">Flug (National)</option>
             <option value="PLANEOUT">Flug (International)</option>
@@ -69,32 +66,8 @@
         </div>
 
         <div id="goaldiv">
-          <label for="Goal">Goal:</label>
+          <label for="Goal">Ziel:</label>
           <input type="text" id="Goal" class="form-control" placeholder="" />
-        </div>
-
-        <div id="returnTripdiv">
-          <label for="returnTrip">Rückweg berechnen?</label>
-          <input
-            type="checkbox"
-            id="returnTrip"
-            name="returnTrip"
-            class="form-check-input"
-          />
-        </div>
-
-        <div id="personsdiv">
-          <label for="persons">Reisen Sie alleine?</label>
-
-          <input
-            type="number"
-            id="persons"
-            value="1"
-            min="1"
-            max="5"
-            step="1"
-            class="form-control"
-          />
         </div>
 
         <div id="buttondiv">
@@ -118,7 +91,6 @@
     </div>
 
     <script type="module" src="../globals.js"></script>
-    <script defer src="./dynamic_form.js"></script>
     <script type="module" src="./eventhandlers.js"></script>
   </body>
 </html>
